@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
 @Aspect
-@Component
+//@Component
 public class AfterReturnController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
