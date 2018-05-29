@@ -1,0 +1,27 @@
+server:
+  port: 9800
+spring:
+  redis:
+    host: 192.168.9.205
+    port: 6379
+    password: admin
+  datasource:
+    druid:
+      wzq:
+        url: jdbc:mysql://192.168.9.205/wzq
+        username: sboxweb
+        password: Sbox123456xZ
+        driver-class-name: com.mysql.jdbc.Driver
+        auto-reconnect: true
+        max-active: 50
+        test-on-borrow: true
+logging:
+  level:
+    org.springframework.web: ERROR
+  pattern:
+      console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+      file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: d:/logs/mySpring.log
+com:
+  zx:
+    name: wzq
