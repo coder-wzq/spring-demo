@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 public class HelloDao {
 
     @Autowired
-//    @Qualifier("wzq")
+    @Qualifier("wzq")
     JdbcTemplate jdbcTemplate;
 
     public Integer getUserCount() {

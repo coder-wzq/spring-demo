@@ -1,5 +1,6 @@
 package com.wzq.springboot.mapper;
 
+import com.wzq.springboot.config.TargetDataSourceOne;
 import com.wzq.springboot.domain.User;
 import com.wzq.springboot.mapper.selectProvider.UserSqlProvider;
 import com.wzq.springboot.mapper.typeHandler.DateTypeHandler;
@@ -7,6 +8,7 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+@TargetDataSourceOne
 public interface UserMapper {
 
     @Select("SELECT * FROM tab_basic_users WHERE user_id = #{id}")

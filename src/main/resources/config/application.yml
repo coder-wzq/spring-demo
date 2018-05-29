@@ -7,18 +7,6 @@ spring:
     password: admin
   datasource:
     druid:
-      # 初始化大小、最小、最大连接数
-      initial-size: 3
-      min-idle: 3
-      max-active: 10
-      # 配置获取连接等待超时的时间
-      max-wait: 60000
-      stat-view-servlet:
-        login-username: admin
-        login-password: admin
-      stat:
-        log-slow-sql: true
-        slow-sql-millis: 2000
       wzq:
         url: jdbc:mysql://192.168.9.205/wzq
         username: sboxweb

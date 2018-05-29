@@ -1,20 +1,11 @@
 package com.wzq.springboot.domain;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Entity
-@Table(name = "tab_city")
 public class City {
-    @Id
-    @GeneratedValue
     private Integer cityId;
-
-    @Column
     private String cityName;
-    @Column
     private String provinceName;
-    @Transient //不进行映射
     private Timestamp createTime;
 
 

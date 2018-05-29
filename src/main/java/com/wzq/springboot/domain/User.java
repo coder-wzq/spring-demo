@@ -5,11 +5,9 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
 
 public class User {
     private String userId;
-    @NotEmpty
     private String loginName;
     private String userLanguage;
     private Long createTime;
