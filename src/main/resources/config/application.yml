@@ -1,18 +1,33 @@
 server:
   port: 9800
 spring:
+  application:
+    name: spring-boot
+  rabbitmq:
+    host: 192.168.103.215
+    port: 5672
+    username: guest
+    password: guest
   redis:
-    host: 192.168.9.205
+    host: 192.168.103.215
     port: 6379
     password: admin
   datasource:
     druid:
+      stat-view-servlet:
+        login-username: admin
+        login-password: admin
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 2000
       wzq:
         url: jdbc:mysql://192.168.9.205/wzq
         username: sboxweb
         password: Sbox123456xZ
         driver-class-name: com.mysql.jdbc.Driver
         auto-reconnect: true
+        initial-size: 3
+        min-idle: 3
         max-active: 50
         test-on-borrow: true
       wzq1:
@@ -21,6 +36,8 @@ spring:
         password: Sbox123456xZ
         driver-class-name: com.mysql.jdbc.Driver
         auto-reconnect: true
+        initial-size: 3
+        min-idle: 3
         max-active: 50
         test-on-borrow: true
 logging:

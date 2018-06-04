@@ -1,6 +1,6 @@
 package com.wzq.springboot.service;
 
-import com.wzq.springboot.dao.HelloDao;
+import com.wzq.springboot.dao.UserDao;
 import com.wzq.springboot.domain.User;
 import com.wzq.springboot.mapper.UserMapper;
 import com.wzq.springboot.util.RedisUtil;
@@ -16,14 +16,14 @@ public class UserService {
     Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
-    private HelloDao helloDao;
+    private UserDao userDao;
     @Autowired
     private UserMapper userMapper;
     @Autowired
     private RedisUtil redisUtil;
 
     public Integer getUserCount(){
-        return helloDao.getUserCount();
+        return userDao.getUserCount();
     }
 
     public User getFirstUserInfo(Integer id) {
@@ -39,13 +39,14 @@ public class UserService {
     }
 
     public User findByLoginName(String name) {
-        if (redisUtil.hasKey(name)){
-            logger.info((String)redisUtil.getValue(name));
+        User currentUser = null;
+        if (redisUtil.hasKey("currentUserTest")){
+            currentUser = (User)redisUtil.getValue("currentUser");
         }else{
             logger.error("none currentUser");
+            currentUser = userMapper.findByLoginName(name);
+            redisUtil.put("currentUserTest",currentUser);
         }
-        User currentUser = userMapper.findByLoginName(name);
-        redisUtil.putClass("currentUser",currentUser,100);
         return currentUser;
     }
 

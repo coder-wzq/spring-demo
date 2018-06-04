@@ -9,7 +9,7 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@Component
+//@Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class ZxFilter implements Filter {
     @Override

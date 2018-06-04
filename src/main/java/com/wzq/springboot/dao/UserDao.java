@@ -6,10 +6,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class HelloDao {
+public class UserDao {
 
     @Autowired
-    @Qualifier("wzq")
+    @Qualifier("wzq1")
     JdbcTemplate jdbcTemplate;
 
     public Integer getUserCount() {

@@ -5,18 +5,32 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import java.io.Serializable;
 
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String userId;
     private String loginName;
     private String userLanguage;
     private Long createTime;
-    @Max(value = 100,message = "最大年龄100")
-    @Min(value = 18,message = "最小年龄18")
+    @Max(value = 100, message = "最大年龄100")
+    @Min(value = 18, message = "最小年龄18")
     private Integer age;
-    @Length(min = 6,max = 10,message = "密码长度小于10位大于6位")
+    @Length(min = 6, max = 10, message = "密码长度小于10位大于6位")
     private String password;
     private String description;
+
+    public User() {
+    }
+
+    public User(String loginName, String password, String description, String userLanguage) {
+        super();
+        this.loginName = loginName;
+        this.password = password;
+        this.description = description;
+        this.userLanguage = userLanguage;
+    }
 
     public String getUserId() {
         return userId;
