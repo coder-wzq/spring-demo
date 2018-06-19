@@ -21,7 +21,7 @@ spring:
         log-slow-sql: true
         slow-sql-millis: 2000
       wzq:
-        url: jdbc:mysql://192.168.9.205/wzq
+        url: jdbc:mysql://192.168.103.215/sbox_db
         username: sboxweb
         password: Sbox123456xZ
         driver-class-name: com.mysql.jdbc.Driver
@@ -31,7 +31,7 @@ spring:
         max-active: 50
         test-on-borrow: true
       wzq1:
-        url: jdbc:mysql://192.168.9.205/wzq1
+        url: jdbc:mysql://192.168.103.215/sbox_db
         username: sboxweb
         password: Sbox123456xZ
         driver-class-name: com.mysql.jdbc.Driver
